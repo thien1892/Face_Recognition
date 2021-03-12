@@ -23,6 +23,15 @@
 
 # Triplet Loss
 - Nội dung: [FaceNet](https://arxiv.org/pdf/1503.03832.pdf)
-- Làm thế nào để đào tạo tham số cho mô hình DeepFace?
-    - Ta sử dụng đầu vào là 3 bức ảnh: ảnh đối tượng (Anchor); 1 ảnh khác chỉ cùng đối tượng (Positive); 1 ảnh không phải đối tượng (Negative), khi đó ta có: d(A,P) - d(A,N) + anpha =< 0 ***ta thêm anpha để đảm bảo không xảy ra trường hợp khi f(x) là vecto 0, bởi vì nếu không có anpha khi f(x) là vecto 0 sẽ thỏa mãn phương trình!***
+- Làm thế nào để đào tạo tham số cho mô hình Face Recognition?
+    - Ta sử dụng đầu vào là 3 bức ảnh: ảnh đối tượng (Anchor); 1 ảnh khác chỉ cùng đối tượng (Positive); 1 ảnh không phải đối tượng (Negative), khi đó ta có: **d(A,P) - d(A,N) + anpha =< 0 (1)** ***;Ta thêm anpha để đảm bảo không xảy ra trường hợp khi f(x) là vecto 0, bởi vì nếu không có anpha khi f(x) là vecto 0 sẽ thỏa mãn phương trình (1)!***
     <img src ='https://i.imgur.com/Ognsy3N.jpg'>
+    - Loss function: L(A,P,N) = max(d(A,P) - d(A,N) + anpha, 0) --> J = tổng L --> ta cần tối ưu hóa J để xác định các tham số. Khi đó với tập các bức ảnh, ta cần tạo ra bộ 3 **A, P, N** để thực hiện đào tạo mô hình.
+    <img src = 'https://i.imgur.com/XpOxXpc.jpg'>
+    - Với 1 tập ảnh nếu chọn ngẫu nhiên thì phương trình (1) dễ dàng thỏa mãn do 2 bức ảnh khác nhau rất nhiều trong tập ảnh --> do đó ta sẽ lựa chọn những bộ 3 mà d(A,N) rất gần d(A,P) để training (bởi vì độ chính xác 95% lúc này sẽ rất khác so với chọn ngẫu nhiên, do có nhiều phương trình mặc nhiên đúng dù tham số ra sao). Khi đánh giá mô hình ta xem với các bộ 3 mà ta đưa vào, các tham số mà ta thu được, liệu có d(A,P) nhỏ và d(A,N) lớn hay không?
+
+# Face Verification và Phân loại nhị phân.
+- Ngoài cách sử dụng Triplet Loss để đào tạo tham số, ta có thể xem hàm similarity function (d) giống như 1 bài toán phân loại nhị phân d = 0/1.
+<img src ='https://i.imgur.com/DwHY7k3.jpg'>
+
+- Khi đó training mô hình ta có X là 2 bức ảnh , và y=0/1 xác minh xem có cùng 1 người hay không.
