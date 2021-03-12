@@ -18,5 +18,5 @@
 - Khi đó nếu xác định bức ảnh có phải 1 người trong 100 người (hay 105 người), ta chỉ cần xem 100 (hoặc 105) công thức d xem có trường hợp nào thỏa mãn =< t hay không!
 # Siamese Network:
 - Nội dung: [DeepFace](https://www.cs.toronto.edu/~ranzato/publications/taigman_cvpr14.pdf)
-- 
-<img src = ''>
+- Siamese Network (deepface) sẽ có dang như dưới. Mô hình sẽ mã hóa bức ảnh xi --> f(xi) là vecto 128 chiều; khi đó d(xi, xj) = np.linalg.norm(f(xi) - f(xj)) **2. Việc học tập các tham số được thực hiện, sao cho với xi, xj chỉ cùng 1 người thì d nhỏ và ngược lại.
+<img src = 'https://i.imgur.com/hSv2Mqi.png'>
