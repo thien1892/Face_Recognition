@@ -20,3 +20,9 @@
 - Nội dung: [DeepFace](https://www.cs.toronto.edu/~ranzato/publications/taigman_cvpr14.pdf)
 - Siamese Network (deepface) sẽ có dang như dưới. Mô hình sẽ mã hóa bức ảnh xi --> f(xi) là vecto 128 chiều; khi đó d(xi, xj) = np.linalg.norm(f(xi) - f(xj)) **2. Việc học tập các tham số được thực hiện, sao cho với xi, xj chỉ cùng 1 người thì d nhỏ và ngược lại.
 <img src = 'https://i.imgur.com/hSv2Mqi.png'>
+
+# Triplet Loss
+- Nội dung: [FaceNet](https://arxiv.org/pdf/1503.03832.pdf)
+- Làm thế nào để đào tạo tham số cho mô hình DeepFace?
+    - Ta sử dụng đầu vào là 3 bức ảnh: ảnh đối tượng (Anchor); 1 ảnh khác chỉ cùng đối tượng (Positive); 1 ảnh không phải đối tượng (Negative), khi đó ta có: d(A,P) - d(A,N) + anpha =< 0 ***ta thêm anpha để đảm bảo không xảy ra trường hợp khi f(x) là vecto 0, bởi vì nếu không có anpha khi f(x) là vecto 0 sẽ thỏa mãn phương trình!***
+    <img src ='https://i.imgur.com/Ognsy3N.jpg'>
