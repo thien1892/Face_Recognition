@@ -35,3 +35,8 @@
 <img src ='https://i.imgur.com/DwHY7k3.jpg'>
 
 - Khi đó training mô hình ta có X là 2 bức ảnh , và y=0/1 xác minh xem có cùng 1 người hay không.
+
+# Code
+Bạn tham khảo tại các nguồn sau: 
+- [Deep Face Recognition with Keras](https://sefiks.com/2018/08/06/deep-face-recognition-with-keras/)
+- [Deep Face](https://github.com/serengil/deepface)
