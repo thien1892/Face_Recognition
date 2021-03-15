@@ -42,6 +42,6 @@ Bạn tham khảo tại các nguồn sau:
 - [Deep Face](https://github.com/serengil/deepface)
 
 # Thực hành:
-- Thực hành với [mô hình VGG-Face](https://www.robots.ox.ac.uk/~vgg/publications/2015/Parkhi15/parkhi15.pdf): [click here](https://github.com/thien1892/Face_Recognition/blob/main/vgg_face.ipynb)
+- Thực hành với [mô hình VGG-Face](https://www.robots.ox.ac.uk/~vgg/publications/2015/Parkhi15/parkhi15.pdf): [.........click here.............](https://github.com/thien1892/Face_Recognition/blob/main/vgg_face.ipynb)
 - Mô hình (input_shape = (224,224,3)):
 <img src ='https://i.imgur.com/LIHs5ei.jpg'>
